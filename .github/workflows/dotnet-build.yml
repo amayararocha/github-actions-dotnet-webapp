@@ -1,0 +1,19 @@
+name: Meu Workflow
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron:  '0 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v2
+
+    - name: Executar script
+      run: |
+        echo "Olá, este é um script de exemplo!"
